@@ -10,8 +10,10 @@ const io = require("socket.io")(server, {
   },
 });
 
+// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
 
+// Handle socket connections
 io.on("connection", (socket) => {
   console.log("A user connected");
 
@@ -28,6 +30,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(5000, () => {
-  console.log("Server is listening on port 5000");
+// Use the port assigned by Heroku, default to 5000 if not set
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });

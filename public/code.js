@@ -1,6 +1,6 @@
 (function () {
   const app = document.querySelector(".app");
-  const socket = io("http://127.0.0.1:5000");
+  const socket = io("https://chat-app-2024-fx88.onrender.com/");
 
   let uname;
 

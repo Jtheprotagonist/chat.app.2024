@@ -5,7 +5,7 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "*", // Adjust as needed for security
+    origin: "https://codebrewcoffee.github.io/chat.app.2024/", // Adjust as needed for security
     methods: ["GET", "POST"],
   },
 });
